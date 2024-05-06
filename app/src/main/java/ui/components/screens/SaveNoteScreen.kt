@@ -22,6 +22,7 @@ import com.topic2.android.notes.util.fromHex
 import ui.components.NoteColor
 
 @Composable
+fun SaveNoteScreen(viewModel: MainViewModel) {}
 private fun ColorPicker(
     colors: List<ColorModel>,
     onColorSelect: (ColorModel) -> Unit
