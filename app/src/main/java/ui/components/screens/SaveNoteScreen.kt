@@ -24,7 +24,23 @@ import ui.components.NoteColor
 import ui.components.TopAppBar
 
 @Composable
-fun SaveNoteScreen(viewModel: MainViewModel) {}
+fun SaveNoteScreen(viewModel: MainViewModel) {
+    val noteEntry: NoteModel by viewModel.noteEntry.observeAsState(NoteModel())
+    Scaffold(topBar = {
+        val isEditingMode: Boolean = noteEntry.id != NEW_NOTE_ID
+        SaveNoteTopAppBar(
+            isEditingMode = isEditingMode,
+            onBackClick = {
+                NotesRouter.navigateTo(Screen.Notes)
+            },
+            onSaveNoteClick = {},
+            onOpenColorPickerClick = {},
+            onDeleteNoteClick = {})
+    },
+        content = {}
+    )
+
+}
 private fun ColorPicker(
     colors: List<ColorModel>,
     onColorSelect: (ColorModel) -> Unit
