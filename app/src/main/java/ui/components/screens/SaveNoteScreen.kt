@@ -62,8 +62,10 @@ import ui.components.NoteColor
 fun SaveNoteScreen(viewModel: MainViewModel) {
     val noteEntry: NoteModel by viewModel.noteEntry.observeAsState(NoteModel())
 
-    val colors: List<ColorModel> by viewModel.color
+    val colors: List<ColorModel> by viewModel.colors
         .observeAsState(listOf())
+
+
     val bottomDrawerState: BottomDrawerState = rememberBottomDrawerState(BottomDrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
 
