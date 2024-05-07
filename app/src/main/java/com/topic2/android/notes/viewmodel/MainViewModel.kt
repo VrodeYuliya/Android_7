@@ -29,6 +29,10 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     private var _noteEntry = MutableLiveData(NoteModel())
     val noteEntry: LiveData<NoteModel> = _noteEntry
 
+    val colors: LiveData<List<ColorModel>> by lazy {
+        repository.getAllColors()
+    }
+
     private var _selectedNotes = MutableLiveData<List<NoteModel>>(listOf())
     val selectedNotes: LiveData<List<NoteModel>> = _selectedNotes
 
@@ -79,6 +83,8 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
+
+
     fun onNoteEntryChange(note: NoteModel) {
         _noteEntry.value = note
     }
@@ -93,6 +99,7 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
             }
         }
     }
+
 
     fun moveNoteToTrash(note: NoteModel) {
         viewModelScope.launch(Dispatchers.Default) {

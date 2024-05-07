@@ -21,10 +21,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.tooling.preview.Preview
 import com.topic2.android.notes.domain.model.NoteModel
 import com.topic2.android.notes.routing.Screen
-import com.topic2.android.notes.ui.components.AppDrawer
-import com.topic2.android.notes.ui.components.Note
 import com.topic2.android.notes.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
+import ui.components.AppDrawer
+import ui.components.Note
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
